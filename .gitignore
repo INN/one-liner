@@ -1,0 +1,7 @@
+.DS_Store
+data/*.sqlite3
+*.pyc
+*.log
+local_settings.py
+dump.rdb
+*.db
