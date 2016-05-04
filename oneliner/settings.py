@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'oneliner',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -119,3 +120,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# User profiles
+AUTH_PROFILE_MODULE = 'oneliner.UserProfile'
