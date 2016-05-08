@@ -14,8 +14,30 @@ class Organization(models.Model):
             ('B', 'Between 50-100 full-time employees'),
             ('C', 'Greater than 100 full-time employees'),
         ),
+        default="?")
+
+    budget = models.CharField(
+        max_length=1,
+        choices=(
+            ('A', 'Less than $10'),
+            ('B', 'Less than $100'),
+            ('C', 'Less than $500'),
+        ),
+        default="?")
+
+    pageviews = models.CharField(
+        max_length=1,
+        choices=(
+            ('A', 'Less than 10,000'),
+            ('B', 'Less than 50,000'),
+            ('C', 'Less than 1 million'),
+            ('D', 'More than 1 million'),
+        ),
         default="?"
+
+
     )
+
 
 
 class UserProfile(models.Model):
