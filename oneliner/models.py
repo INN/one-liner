@@ -5,6 +5,7 @@ from django.db.models.signals import post_save
 
 
 class Organization(models.Model):
+    
     name = models.CharField(max_length=250)
     url = models.URLField()
     size = models.CharField(
@@ -34,17 +35,18 @@ class Organization(models.Model):
             ('C', 'Less than 1 million'),
             ('D', 'More than 1 million'),
         ),
-        default="?"
+        default="?")
 
-
-    )
-
+class Services(models.Model):
+    name = models.CharField(max_length=250)
+    price = models.Charfield(max_length = 3000)
+    performance = models.Charfield(max_length = 3000)
+    privacy = models.Charfield(max_length=3000)
 
 
 class UserProfile(models.Model):
     user = models.OneToOneField(User)
     organization = models.ForeignKey(Organization, blank=True, null=True)
-
     def __str__(self):
         return "%s's profile" % self.user
 
