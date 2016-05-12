@@ -1,12 +1,13 @@
-from django.http import HttpResponse
-from django.shortcuts import render, render_to_response
+from django.shortcuts import render
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
+from django.contrib import messages
 
 from forms import RegisterForm
 
 
 def home(request):
-    return render_to_response('index.html')
+    return render(request, 'index.html')
 
 
 def register(request):
@@ -14,17 +15,20 @@ def register(request):
         form = RegisterForm(request.POST)
         if form.is_valid():
             try:
-                user = User.objects.get(username=form.data.get('username'))
-                return HttpResponse("That username already exists!")
+                User.objects.get(username=form.data.get('username'))
+                messages.error(request, "That username is already taken!")
             except User.DoesNotExist:
-                user = User(
-                    username=form.data.get('username'),
-                    password=form.data.get('password'),
-                    email=form.data.get('email')
+                User.objects.create_user(
+                    form.data.get('username'),
+                    email=form.data.get('email'),
+                    password=form.data.get('password')
                 )
-                user.save()
-                return HttpResponse("Thanks for registering!")
+                messages.success(request, "Thanks for registering!")
     else:
         form = RegisterForm()
 
     return render(request, 'registration/register.html', {'form': form})
+
+@login_required
+def profile(request):
+    return render(request, 'profile.html')
