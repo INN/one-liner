@@ -22,6 +22,7 @@ class Organization(models.Model):
             ('A', 'Less than $10'),
             ('B', 'Less than $100'),
             ('C', 'Less than $500'),
+            ('D', 'More than $500'),
         ),
         default="?")
 
