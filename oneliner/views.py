@@ -46,3 +46,8 @@ def profile(request):
 @login_required
 def survey(request):
     return render(request, 'survey.html')
+
+
+@login_required
+def services(request):
+    return render(request, 'services.html')

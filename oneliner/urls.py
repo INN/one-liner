@@ -31,5 +31,6 @@ urlpatterns = [
     url(r'^$', views.home, name='home'),
     url(r'^register/?$', views.register, name='register'),
     url(r'^accounts/profile/?$', views.profile, name='profile'),
-    url(r'^accounts/survey/?$', views.survey, name='survey')
+    url(r'^accounts/survey/?$', views.survey, name='survey'),
+    url(r'^services/?$', views.services, name='services')
 ]

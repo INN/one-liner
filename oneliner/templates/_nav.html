@@ -1,4 +1,4 @@
-<h1>One Liner</h1>
+<h1><a href="{% url 'home' %}">One Liner</a></h1>
 <ul>
   <li><a href="{% url 'home' %}">Home</a></li>
   {% if not user.is_authenticated %}
@@ -7,5 +7,6 @@
   {% else %}
   <li><a href="{% url 'profile' %}">Profile</a></li>
   <li><a href="{% url 'logout' %}">Logout</a></li>
+  <li><a href="{% url 'services' %}">All services</a></li>
   {% endif %}
 </ul>
