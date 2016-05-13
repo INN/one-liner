@@ -123,3 +123,5 @@ STATIC_URL = '/static/'
 
 # User profiles
 AUTH_PROFILE_MODULE = 'oneliner.UserProfile'
+
+LOGIN_URL = '/login/'
