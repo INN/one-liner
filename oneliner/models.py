@@ -37,15 +37,26 @@ class Organization(models.Model):
         ),
         default="?")
 
+    def __str__(self):
+        return self.name
+
 class Services(models.Model):
     name = models.CharField(max_length=250)
-    price = models.Charfield(max_length = 3000)
-    performance = models.Charfield(max_length = 3000)
-    privacy = models.Charfield(max_length=3000)
+    price = models.CharField(max_length = 3000, blank=True, null=True)
+    performance = models.CharField(max_length = 3000, blank=True, null=True  )
+    privacy = models.CharField(max_length=3000, blank=True, null=True)
+    organizations = models.ManyToManyField(Organization, blank=True, null=True)
+
+    def __str__(self):
+        return self.name
 
 
 class UserProfile(models.Model):
     user = models.OneToOneField(User)
+    #Should we keep this as null=true, blank=true Or make sure that every
+    #person is associated with an organization? 
+    #Should we use on_delete cascade for the foreign key here? Which means if the organization in the
+    #table is deleted, all the people using it will be deleted?
     organization = models.ForeignKey(Organization, blank=True, null=True)
     def __str__(self):
         return "%s's profile" % self.user
