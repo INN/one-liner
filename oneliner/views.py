@@ -5,6 +5,7 @@ from django.contrib.auth.models import User
 from django.contrib import messages
 
 from forms import RegisterForm
+from oneliner.models import Services as Service
 
 
 def home(request):
@@ -50,4 +51,5 @@ def survey(request):
 
 @login_required
 def services(request):
-    return render(request, 'services.html')
+    services = Service.objects.all()
+    return render(request, 'services.html', {'services': services})
