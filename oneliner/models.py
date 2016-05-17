@@ -4,8 +4,20 @@ from django.contrib.auth.models import User
 from django.db.models.signals import post_save
 
 
-class Organization(models.Model): #All information about an organization that uses One-liner
-    
+class Service(models.Model):
+    name = models.CharField(max_length=250)
+    price = models.CharField(max_length=3000, blank=True, null=True)
+    performance = models.CharField(max_length=3000, blank=True, null=True)
+    privacy = models.CharField(max_length=3000, blank=True, null=True)
+    service_id = models.CharField(max_length=250, blank=True, null=True)
+    def __str__(self):
+        return self.name
+
+
+class Organization(models.Model):
+    """
+    All information about an organization that uses One-liner
+    """
     name = models.CharField(max_length=250)
     url = models.URLField()
     size = models.CharField(
@@ -39,25 +51,20 @@ class Organization(models.Model): #All information about an organization that us
 
     def __str__(self):
         return self.name
-
-class Service(models.Model): #Table for all the services that One-liner offers
-    name = models.CharField(max_length=250)
-    price = models.CharField(max_length = 3000, blank=True, null=True)
-    performance = models.CharField(max_length = 3000, blank=True, null=True  )
-    privacy = models.CharField(max_length=3000, blank=True, null=True)
-    organizations = models.ManyToManyField(Organization, blank=True, null=True) #Organizations can have many services and each service can be used by many organizations
-
-    def __str__(self):
-        return self.name
+    services =models.ManytoMany(Organization, blank=True, null=True)
 
 
 class UserProfile(models.Model):
     user = models.OneToOneField(User)
-    #Should we keep this as null=true, blank=true Or make sure that every
-    #person is associated with an organization? 
-    #Should we use on_delete cascade for the foreign key here? Which means if the organization in the
-    #table is deleted, all the people using it will be deleted?
-    organization = models.ForeignKey(Organization, blank=True, null=True) #Many users can belong to an organization
+    """
+    Should we keep this as null=true, blank=true Or make sure that every
+    person is associated with an organization?
+    Should we use on_delete cascade for the foreign key here? Which means if the organization in the
+    table is deleted, all the people using it will be deleted?
+    """
+    # Many users can belong to an organization
+    organization = models.ForeignKey(Organization, blank=True, null=True)
+
     def __str__(self):
         return "%s's profile" % self.user
 

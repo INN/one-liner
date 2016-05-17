@@ -2,7 +2,21 @@
 
 {% block content %}
 <h2>Available services</h2>
-  {% for services in services %}
-    <!-- Print service information here -->
+<ul>
+  {% for service in services %}
+  <li>
+    <h3>{{ service.name }}</h3>
+    <table>
+      <th>Price</th>
+      <th>Performance</th>
+      <th>Privacy</th>
+      <tr>
+        <td>{{ service.price }}</td>
+        <td>{{ service.performance }}</td>
+        <td>{{ service.privacy }}</td>
+      </tr>
+    </table>
+  </li>
   {% endfor %}
+</ul>
 {% endblock %}
