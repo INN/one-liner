@@ -40,7 +40,7 @@ class Organization(models.Model): #All information about an organization that us
     def __str__(self):
         return self.name
 
-class Services(models.Model): #Table for all the services that One-liner offers
+class Service(models.Model): #Table for all the services that One-liner offers
     name = models.CharField(max_length=250)
     price = models.CharField(max_length = 3000, blank=True, null=True)
     performance = models.CharField(max_length = 3000, blank=True, null=True  )
