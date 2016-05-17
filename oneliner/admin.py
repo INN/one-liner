@@ -1,5 +1,5 @@
 from django.contrib import admin
-from oneliner.models import Organization, Services as Service
+from oneliner.models import Organization, Service
 
 
 @admin.register(Organization)

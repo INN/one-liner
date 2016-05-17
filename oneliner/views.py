@@ -5,7 +5,7 @@ from django.contrib.auth.models import User
 from django.contrib import messages
 
 from forms import RegisterForm
-from oneliner.models import Services as Service
+from oneliner.models import Service
 
 
 def home(request):
