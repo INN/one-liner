@@ -1,3 +1,5 @@
+import json
+
 from django.db import models
 
 from django.contrib.auth.models import User
@@ -9,7 +11,7 @@ class Service(models.Model):
     price = models.CharField(max_length=3000, blank=True, null=True)
     performance = models.CharField(max_length=3000, blank=True, null=True)
     privacy = models.CharField(max_length=3000, blank=True, null=True)
-    service_id = models.CharField(max_length=250, blank=True, null=True)
+    account_id_label = models.CharField(max_length=250, blank=True, null=True)
 
     def __str__(self):
         return self.name
@@ -50,10 +52,24 @@ class Organization(models.Model):
         ),
         default="?")
 
-    services = models.ManyToManyField(Service, blank=True, null=True)
-
     def __str__(self):
         return self.name
+
+
+class ServiceConfig(models.Model):
+    service = models.ForeignKey(Service)
+    organization = models.ForeignKey(Organization)
+    account_id = models.CharField(max_length=250)
+
+    def to_struct(self):
+        return {
+            'account_id_label': self.service.account_id_label,
+            'account_id': self.account_id,
+            'type': self.service.name
+        }
+
+    def to_json(self):
+        return json.dumps(self.to_struct())
 
 
 class UserProfile(models.Model):
