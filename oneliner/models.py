@@ -1,7 +1,5 @@
 import json
-
 from django.db import models
-
 from django.contrib.auth.models import User
 from django.db.models.signals import post_save
 
@@ -55,7 +53,6 @@ class Organization(models.Model):
     def __str__(self):
         return self.name
 
-
 class ServiceConfig(models.Model):
     service = models.ForeignKey(Service)
     organization = models.ForeignKey(Organization)
@@ -74,6 +71,7 @@ class ServiceConfig(models.Model):
 
 class UserProfile(models.Model):
     user = models.OneToOneField(User)
+    
     """
     Should we keep this as null=true, blank=true Or make sure that every
     person is associated with an organization?
