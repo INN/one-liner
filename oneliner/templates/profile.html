@@ -5,4 +5,14 @@
 <h3>Your account:</h3>
 <p>Username: {{ user.username }}</p>
 <p>Email address: {{ user.email }}</p>
+
+<h3>Your One Liner:</h3>
+<textarea>TKTK One Liner script tag goes here</textarea>
+
+<h3>Configured services</h3>
+<ul>
+  {% for config in configured_services %}
+    <li>{{ config.service.name }} ({{ config.service.account_id_label }}: {{ config.account_id }})</li>
+  {% endfor %}
+</ul>
 {% endblock %}

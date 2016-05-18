@@ -1,0 +1,11 @@
+{% extends '_base.html' %}
+
+{% block content %}
+<h2>Add {{ service.name }}</h2>
+<p>To add {{ service.name }} to your One Liner configuration, we'll need to know your {{ service.account_id_label }}.</p>
+<form action="{% url 'service_add' service.name %}" method="post">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="Add service" />
+</form>
+{% endblock %}

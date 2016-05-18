@@ -4,8 +4,8 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.contrib import messages
 
-from forms import RegisterForm
-from oneliner.models import Service
+from forms import RegisterForm, ServiceAddForm
+from oneliner.models import Service, ServiceConfig
 
 
 def home(request):
@@ -41,7 +41,9 @@ def profile(request):
     if request.user.last_login is None:
         return HttpResponseRedirect('/accounts/survey/')
     else:
-        return render(request, 'profile.html')
+        org = request.user.userprofile.organization
+        configured_services = ServiceConfig.objects.filter(organization=org)
+        return render(request, 'profile.html', {'configured_services': configured_services})
 
 
 @login_required
@@ -53,3 +55,29 @@ def survey(request):
 def services(request):
     services = Service.objects.all()
     return render(request, 'services.html', {'services': services})
+
+
+@login_required
+def service_add(request, service):
+    service = Service.objects.get(name=service)
+
+    if request.method == 'POST':
+        form = ServiceAddForm(request.POST)
+        if form.is_valid():
+            org = request.user.userprofile.organization
+
+            try:
+                ServiceConfig.objects.get(organization=org, service=service)
+                messages.error(request, "You already have a config stored for %s" % service.name)
+            except ServiceConfig.DoesNotExist:
+                config = ServiceConfig(
+                    organization=org,
+                    service=service,
+                    account_id=form.data.get('account_id')
+                )
+                config.save()
+                messages.success(request, "Configuration for %s saved" % service.name)
+    else:
+        form = ServiceAddForm()
+
+    return render(request, 'service_add.html', {'service': service, 'form': form})

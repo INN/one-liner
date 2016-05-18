@@ -16,6 +16,7 @@
         <td>{{ service.privacy }}</td>
       </tr>
     </table>
+    <a href="{% url 'service_add' service.name %}">Add this service</a>
   </li>
   {% endfor %}
 </ul>
