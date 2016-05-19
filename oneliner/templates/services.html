@@ -16,7 +16,17 @@
         <td>{{ service.privacy }}</td>
       </tr>
     </table>
-    <a href="{% url 'service_add' service.name %}">Add this service</a>
+    {% if service.id in existing_configs %}
+      <p>You already have this service added to your configuration.</p>
+      <p>
+        <ul>
+          <li><a href="{% url 'service_edit' service.name %}">Edit settings</a></li>
+          <li><a href="{% url 'service_remove' service.name %}">Remove service</a></li>
+        </ul>
+      </p>
+    {% else %}
+      <p><a href="{% url 'service_add' service.name %}">Add this service</a></p>
+    {% endif %}
   </li>
   {% endfor %}
 </ul>

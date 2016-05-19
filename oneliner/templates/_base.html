@@ -1,9 +1,16 @@
+{% load staticfiles %}
 <!doctype html>
 <html>
   <head>
     <title>One Liner</title>
+
+    <link href="//cdn-images.mailchimp.com/embedcode/classic-10_7.css" rel="stylesheet" type="text/css">
+    <script src="//use.typekit.net/cui8tby.js"></script>
+    <script>try{Typekit.load();}catch(e){}</script>
+    <link href='https://fonts.googleapis.com/css?family=Grand+Hotel' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="{% static 'css/main.css' %}" type="text/css" />
   </head>
-  <body>
+  <body class="mono">
     {% block navigation %}
       {% include '_nav.html' %}
     {% endblock %}
@@ -16,6 +23,8 @@
     </ul>
     {% endif %}
 
+    <div class="content">
     {% block content %}{% endblock %}
+    </div>
   </body>
 </html>

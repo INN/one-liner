@@ -1,7 +1,12 @@
 {% extends '_base.html' %}
 
 {% block content %}
-<h2>Survey</h2>
-<p>Tell us a bit about your organization and we'll help you determine which services are right for you.</p>
-<p><a href="{% url 'profile' %}">Skip this step for now.</a></p>
+<h2>About your company</h2>
+<h3>We need to know a few things before getting started</h3>
+<p>Tell us a bit about your company and we'll help you determine which services are right for you.</p>
+<form action="{% url 'survey' %}" method="post">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="Submit" />
+</form>
 {% endblock %}

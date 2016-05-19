@@ -1,0 +1,6 @@
+/* TODO: use the config objects to actually load services on the front end */
+var config = [
+{% for service in services %}
+  {{ service|safe }}{% if not forloop.last %},{% endif %}
+{% endfor %}
+];

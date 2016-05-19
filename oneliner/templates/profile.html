@@ -1,18 +1,24 @@
 {% extends '_base.html' %}
 
 {% block content %}
-<h2>Welcome, {{ user.username }}</h2>
-<h3>Your account:</h3>
-<p>Username: {{ user.username }}</p>
-<p>Email address: {{ user.email }}</p>
+<h2>Welcome, {% if user.first_name %}{{ user.first_name }}{% else %}{{ user.username }}{% endif %}</h2>
 
 <h3>Your One Liner:</h3>
-<textarea>TKTK One Liner script tag goes here</textarea>
+<textarea class="one-liner"><script src="{{ one_liner_src }}"></script></textarea>
+<p><a href="{% url 'instructions' %}">Read the instructions for installing One Liner on your site</a></p>
 
 <h3>Configured services</h3>
 <ul>
   {% for config in configured_services %}
-    <li>{{ config.service.name }} ({{ config.service.account_id_label }}: {{ config.account_id }})</li>
+    <li>
+      {{ config.service.name }} ({{ config.service.account_id_label }}: {{ config.account_id }})
+      <div class="actions">
+        <ul>
+          <li><a href="{% url 'service_edit' config.service.name %}">Edit settings</a></li>
+          <li><a href="{% url 'service_remove' config.service.name %}">Remove from my config</a></li>
+        </ul>
+    </li>
   {% endfor %}
 </ul>
+<p><a href="{% url 'services' %}">Add another service</a></p>
 {% endblock %}

@@ -5,6 +5,26 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.db.models.signals import post_save
 
+SIZE_CHOICES = (
+    ('A', 'Less than 50 full-time employees'),
+    ('B', 'Between 50-100 full-time employees'),
+    ('C', 'Greater than 100 full-time employees'),
+)
+
+BUDGET_CHOICES = (
+    ('A', 'Less than $10'),
+    ('B', 'Less than $100'),
+    ('C', 'Less than $500'),
+    ('D', 'More than $500'),
+)
+
+PAGEVIEWS_CHOICES = (
+    ('A', 'Less than 10,000'),
+    ('B', 'Less than 50,000'),
+    ('C', 'Less than 1 million'),
+    ('D', 'More than 1 million'),
+)
+
 
 class Service(models.Model):
     name = models.CharField(max_length=250)
@@ -25,31 +45,17 @@ class Organization(models.Model):
     url = models.URLField()
     size = models.CharField(
         max_length=1,
-        choices=(
-            ('A', 'Less than 50 full-time employees'),
-            ('B', 'Between 50-100 full-time employees'),
-            ('C', 'Greater than 100 full-time employees'),
-        ),
+        choices=SIZE_CHOICES,
         default="?")
 
     budget = models.CharField(
         max_length=1,
-        choices=(
-            ('A', 'Less than $10'),
-            ('B', 'Less than $100'),
-            ('C', 'Less than $500'),
-            ('D', 'More than $500'),
-        ),
+        choices=BUDGET_CHOICES,
         default="?")
 
     pageviews = models.CharField(
         max_length=1,
-        choices=(
-            ('A', 'Less than 10,000'),
-            ('B', 'Less than 50,000'),
-            ('C', 'Less than 1 million'),
-            ('D', 'More than 1 million'),
-        ),
+        choices=PAGEVIEWS_CHOICES,
         default="?")
 
     def __str__(self):
