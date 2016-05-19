@@ -24,6 +24,8 @@
           <li><a href="{% url 'service_remove' service.name %}">Remove service</a></li>
         </ul>
       </p>
+    {% elif not user.userprofile.organization %}
+      <p><a href="{% url 'survey' %}">Tell us about your company before adding services</a></p>
     {% else %}
       <p><a href="{% url 'service_add' service.name %}">Add this service</a></p>
     {% endif %}

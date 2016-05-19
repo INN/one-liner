@@ -124,6 +124,7 @@ def service_add(request, service):
                 )
                 config.save()
                 messages.success(request, "Configuration for %s saved" % service.name)
+                return HttpResponseRedirect('/accounts/profile/')
     else:
         form = ServiceForm()
 

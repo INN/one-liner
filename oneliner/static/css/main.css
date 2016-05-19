@@ -38,6 +38,17 @@ ul.messages {
   width: 100%;
   padding: 0 2em;
 }
+ul.messages li {
+  margin-left: 0;
+  list-style-type: none;
+  display: inline-block;
+  padding: 0.5em;
+}
+ul.messages li.success {
+  color: #3c763d;
+  background-color: #dff0d8;
+  border-color: #d6e9c6;
+}
 
 /* One Liner textarea */
 textarea.one-liner {
@@ -49,7 +60,7 @@ textarea.one-liner {
   padding: 1em;
 }
 
-/* Errors */
+/* Errors, Success */
 .errorlist {
   padding: 0;
 }
