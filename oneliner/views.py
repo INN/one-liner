@@ -42,7 +42,7 @@ def one_liner_js(request, account_id):
         ServiceConfig.objects.filter(organization=org)
     ]
     return render(
-        request, 'one_liner_js.html', {'account_id': account_id, 'services': services},
+        request, 'one_liner.js', {'account_id': account_id, 'services': services},
         content_type='application/javascript'
     )
 

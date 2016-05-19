@@ -59,6 +59,16 @@ class Organization(models.Model):
     def __str__(self):
         return self.name
 
+    def to_struct(self):
+        return {
+            'name': self.name,
+            'url': self.url
+        }
+
+    def to_json(self):
+        return json.dumps(self.to_json())
+
+
 class ServiceConfig(models.Model):
     service = models.ForeignKey(Service)
     organization = models.ForeignKey(Organization)
@@ -68,7 +78,8 @@ class ServiceConfig(models.Model):
         return {
             'account_id_label': self.service.account_id_label,
             'account_id': self.account_id,
-            'type': self.service.name
+            'type': self.service.name,
+            'organization': self.organization.to_struct()
         }
 
     def to_json(self):
@@ -77,7 +88,6 @@ class ServiceConfig(models.Model):
 
 class UserProfile(models.Model):
     user = models.OneToOneField(User)
-    
     """
     Should we keep this as null=true, blank=true Or make sure that every
     person is associated with an organization?
