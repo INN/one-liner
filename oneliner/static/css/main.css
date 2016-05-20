@@ -53,8 +53,8 @@ ul.messages li.success {
 /* One Liner textarea */
 textarea.one-liner {
   width: 100%;
-  max-width: 400px;
-  min-height: 100px;
+  max-width: 500px;
+  min-height: 200px;
   font-size: 16px;
   border: none;
   padding: 1em;
