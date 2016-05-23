@@ -30,7 +30,7 @@ class Service(models.Model):
     performance = models.CharField(max_length=3000, blank=True, null=True)
     privacy = models.CharField(max_length=3000, blank=True, null=True)
     account_id_label = models.CharField(max_length=250, blank=True, null=True)
-    Other_information = models.CharField(max_length=1000, blank=True, null=True)
+    other_information = models.CharField(max_length=1000, blank=True, null=True)
 
     def __str__(self):
         return self.name
