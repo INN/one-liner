@@ -183,3 +183,4 @@ def service_remove(request, service):
 def service(request, service):
     service = Service.objects.get(name=service)
     return render(request, 'service.html', {'service': service})
+    
