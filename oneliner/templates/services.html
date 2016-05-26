@@ -5,7 +5,7 @@
 <ul>
   {% for service in services %}
   <li>
-    <h3>{{ service.name }}</h3>
+    <h3><a href="{% url 'service' service.name %}">{{ service.name }}</a></h3>
     <table>
       <th>Price</th>
       <th>Performance</th>
@@ -14,7 +14,6 @@
         <td>{{ service.price }}</td>
         <td>{{ service.performance }}</td>
         <td>{{ service.privacy }}</td>
-        <td>{{service.other_information}}</td>
       </tr>
     </table>
     {% if service.id in existing_configs %}
