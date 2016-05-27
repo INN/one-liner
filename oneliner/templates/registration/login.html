@@ -1,10 +1,18 @@
-{% extends '_base.html' %}
+{% extends '_base_alt.html' %}
+{% load staticfiles %}
 
 {% block content %}
-<form action="{% url 'login' %}" method="post">
-    {% csrf_token %}
-    {{ form }}
-    <input type="submit" value="Login" />
-</form>
-<p>Don't have an account? <a href="{% url 'register' %}">Register here.</a></p>
+<section class="slide color">
+	<div id="register" class="form-wrapper entry-form">
+		<img src="{% static 'images/oneliner-mono-logo-white.svg' %}" alt="One Liner logo" width="100%" class="feature-logo" />
+		<form action="{% url 'login' %}" method="post">
+			<h1>Sign In</h1>
+		    {% csrf_token %}
+		    {{ form }}
+		    <input type="submit" value="Sign In" />
+		</form>
+		<p>Don't have an account? <a href="{% url 'register' %}">Register here</a>.</p>
+	</div>
+</section>
+
 {% endblock %}

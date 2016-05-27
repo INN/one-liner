@@ -1,5 +1,64 @@
-{% extends '_base.html' %}
+{% extends '_base_alt.html' %}
+{% load staticfiles %}
 
 {% block content %}
-<p>One Liner is a web service that helps you determine what third-party services to add to your site.</p>
+<!--<p>One Liner is a web service that helps you determine what third-party services to add to your site.</p>-->
+<section class="slide intro">
+    <div class="inner">
+      <div class="abs-center">
+        <!-- <h2>Coming soon!</h2> -->
+        <img src="{% static 'images/oneliner-mono-logo-white.svg' %}" alt="One Liner logo" width="100%" class="feature-logo mono"/>
+        <p>the ultimate line of code</p>
+        <ul>
+          <li><span class="button"><a href="//nerds.inn.org/2016/02/22/inn-receives-knight-prototype-grant/" target="_blank">Learn more</a></span></li>
+          <li><span class="button alt"><a href="{% url 'register' %}">Get started</a></span></li>
+        </ul>
+        <div class="sign-up" style="display:none;">
+          <p>Sign up for updates:</p>
+          <!-- <form id="get-updates">
+            <label for="mailchimp-email">Email</label>
+            <input id="mailchimp-email" type="text" placeholder="your email">
+          </form> -->
+          <div id="sign-up">
+            <!-- Begin MailChimp Signup Form -->
+            <div id="mc_embed_signup">
+            <form action="//inn.us1.list-manage.com/subscribe/post?u=81670c9d1b5fbeba1c29f2865&amp;id=1476113985" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+               <div id="mc_embed_signup_scroll">
+                <h3>Subscribe to our mailing list</h3>
+            <div class="indicates-required"><span class="asterisk">*</span> indicates required</div>
+            <div class="mc-field-group">
+                <label for="mce-EMAIL">Email Address  <span class="asterisk">*</span>
+            </label>
+                <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" placeholder="your email">
+            </div>
+            <div class="mc-field-group hidden">
+                <label for="mce-FNAME">First Name </label>
+                <input type="text" value="" name="FNAME" class="" id="mce-FNAME" placeholder="first name">
+            </div>
+            <div class="mc-field-group hidden">
+                <label for="mce-LNAME">Last Name </label>
+                <input type="text" value="" name="LNAME" class="" id="mce-LNAME" placeholder="last name">
+            </div>
+            <div class="mc-field-group input-group">
+               <strong>Project Updates </strong>
+               <ul><li><input type="checkbox" value="1" name="group[4097][1]" id="mce-group[4097]-4097-0"><label for="mce-group[4097]-4097-0">Largo</label></li>
+            <li class="hidden"><input type="checkbox" value="2" name="group[4097][2]" id="mce-group[4097]-4097-1" checked><label for="mce-group[4097]-4097-1">One Liner</label></li>
+            </ul>
+            </div>
+                <div id="mce-responses" class="clear">
+                    <div class="response" id="mce-error-response" style="display:none"></div>
+                    <div class="response" id="mce-success-response" style="display:none"></div>
+                </div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+               <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_81670c9d1b5fbeba1c29f2865_1476113985" tabindex="-1" value=""></div>
+               <input type="submit" value="Go" name="subscribe" id="mc-embedded-subscribe" class="button">
+               </div>
+            </form>
+            </div>
+            <script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script><script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
+            <!--End mc_embed_signup-->
+          </div>
+        </div>
+      </div>
+    </div>
+</section> 
 {% endblock %}

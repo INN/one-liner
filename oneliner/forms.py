@@ -3,9 +3,9 @@ from .models import PAGEVIEWS_CHOICES, SIZE_CHOICES, BUDGET_CHOICES
 
 
 class RegisterForm(forms.Form):
-    username = forms.CharField(label='Username', max_length=100)
-    email = forms.EmailField(label='Email Address')
-    password = forms.CharField(widget=forms.PasswordInput(), label='Password')
+    username = forms.CharField(label='Username', max_length=100, widget=forms.TextInput(attrs={'placeholder': 'username'}))
+    email = forms.EmailField(label='Email Address', widget=forms.TextInput(attrs={'placeholder': 'email'}))
+    password = forms.CharField(widget=forms.PasswordInput(attrs={'placeholder': 'password'}), label='Password')
 
 
 class ServiceForm(forms.Form):

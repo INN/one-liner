@@ -1,7 +1,16 @@
-{% extends '_base.html' %}
+{% extends '_base_alt.html' %}
+{% load staticfiles %}
 
 {% block content %}
-<h2>Bye!</h2>
-<p>Thanks for spending some quality time with One Liner.</p>
-<p><a href="{% url 'login' %}">Log in again.</a></p>
+<section class="slide color">
+	<div id="register" class="form-wrapper entry-form">
+		<img src="{% static 'images/oneliner-mono-logo-white.svg' %}" alt="One Liner logo" width="100%" class="feature-logo" />
+		<div class="text-wrapper">
+			<h2>Bye!</h2>
+			Thanks for spending some quality time with One Liner.
+		</div>
+		<p><a href="{% url 'login' %}">Log in again</a>.</p>
+	</div>
+</section>
+
 {% endblock %}
