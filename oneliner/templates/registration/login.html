@@ -11,7 +11,7 @@
 			<h1>Sign In</h1>
 		    {% csrf_token %}
 		    {{ form }}
-		    <input type="submit" value="Sign In" />
+		    <input type="submit" value="Sign In" class="button" />
 		</form>
 		<p>Don't have an account? <a href="{% url 'register' %}">Register here</a>.</p>
 	</div>
