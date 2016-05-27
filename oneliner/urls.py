@@ -40,6 +40,9 @@ urlpatterns = [
     url(r'^services/edit/([\w\s]+)/?$', views.service_edit, name='service_edit'),
     url(r'^services/remove/([\w\s]+)/?$', views.service_remove, name='service_remove'),
     url(r'^services/?$', views.services, name='services'),
+    
+    # View for individual service
+    url(r'^service/([\w\s]+)/?$', views.service, name='service'),
 
     # *The* javascript view
     url(r'^js/(\d+)/app.js$', views.one_liner_js, name='one_liner_js'),

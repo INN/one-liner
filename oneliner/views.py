@@ -3,6 +3,7 @@ from django.http import HttpResponseRedirect
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.contrib import messages
+from django.views.decorators.csrf import requires_csrf_token
 
 from forms import RegisterForm, ServiceForm, OrgSurvey
 from oneliner.models import Service, ServiceConfig, Organization
@@ -74,6 +75,7 @@ def survey(request):
                 Organization.objects.get(name=form.data.get('name'), url=form.data.get('url'))
                 messages.error(request, "A Company with that name and URL already exists")
             except Organization.DoesNotExist:
+                # Create the org
                 org = Organization(
                     name=form.data.get('name'),
                     url=form.data.get('url'),
@@ -82,11 +84,25 @@ def survey(request):
                     size=form.data.get('size')
                 )
                 org.save()
+                # Associate the org with the user
+                request.user.userprofile.organization = org
+                request.user.userprofile.save()
                 messages.success(
                     request, "Company details saved. You are ready to start using One Liner!")
                 return HttpResponseRedirect('/accounts/profile/')
     else:
-        form = OrgSurvey()
+        if request.user.userprofile.organization:
+            org = request.user.userprofile.organization
+            data = {
+                'name': org.name,
+                'url': org.url,
+                'size': org.size,
+                'budget': org.budget,
+                'pageviews': org.pageviews
+            }
+            form = OrgSurvey(data)
+        else:
+            form = OrgSurvey()
 
     return render(request, 'survey.html', {'form': form})
 
@@ -161,3 +177,10 @@ def service_remove(request, service):
         messages.error(request, "There is no saved configuration for that service.")
 
     return HttpResponseRedirect('/')
+
+
+@login_required
+def service(request, service):
+    service = Service.objects.get(name=service)
+    return render(request, 'service.html', {'service': service})
+    
