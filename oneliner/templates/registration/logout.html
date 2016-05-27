@@ -2,9 +2,11 @@
 {% load staticfiles %}
 
 {% block content %}
-<section class="slide color">
+<section class="slide intro">
 	<div id="register" class="form-wrapper entry-form">
-		<img src="{% static 'images/oneliner-mono-logo-white.svg' %}" alt="One Liner logo" width="100%" class="feature-logo" />
+		<a href="{% url 'home' %}">
+			<img src="{% static 'images/oneliner-mono-logo-white.svg' %}" alt="One Liner logo" width="100%" class="feature-logo" />
+		</a>
 		<div class="text-wrapper">
 			<h2>Bye!</h2>
 			Thanks for spending some quality time with One Liner.

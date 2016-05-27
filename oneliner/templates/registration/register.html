@@ -2,9 +2,11 @@
 {% load staticfiles %}
 
 {% block content %}
-<section class="slide color">
+<section class="slide intro">
 	<div id="register" class="form-wrapper entry-form">
-		<img src="{% static 'images/oneliner-mono-logo-white.svg' %}" alt="One Liner logo" width="100%" class="feature-logo" />
+		<a href="{% url 'home' %}">
+			<img src="{% static 'images/oneliner-mono-logo-white.svg' %}" alt="One Liner logo" width="100%" class="feature-logo" />
+		</a>
 		<form action="{% url 'register' %}" method="post">			
 			<h1>Get Started</h1>
 		    {% csrf_token %}

@@ -36,11 +36,11 @@ h5 {
     color:#08c8ff;
 }
 a, a:visited {
-  color:#5f65dc;
+  color:#08c8ff; /*Tabriz*/
   text-decoration:none;
 }
 a:hover {
-  color:#6c71e5;
+  color:#09C9FF;
   text-decoration:underline;
 }
 
@@ -78,6 +78,15 @@ a:hover {
   font-weight: bold;
   letter-spacing: .02em;
 }
+nav img {
+  padding: 1em 0;
+  float: left;
+}
+nav ul li.button.alt {
+  width: auto;
+  padding: 0 10px;
+  line-height: 1;
+}
 
 .nav.alt ul li a, .nav.alt ul li a:visited { 
   color:#fff;
@@ -111,45 +120,45 @@ a:hover {
   width:100%;
 }
 
-section.slide {
+
+/* Content area */
+.content {
   position:relative;
   min-height:100vh;
-  min-width:100%;
-  top:0;
-  bottom:0;
+  padding:80px 20px 20px 20px;
+  margin:0 auto;
+  line-height:1.5;
 }
 
-section.slide.color {
-  background-color: #08c8ff; /*Tabriz*/
-}
-
-section.slide.intro {
-  position:fixed;
-  background-color: #08c8ff; /*Tabriz*/
-}
-
-section.slide.intro-spacer {
+s
+section.intro-spacer {
   margin-top:100vh;
   background-color:#fff;
 }
-section.slide.nonintro {
+section.nonintro {
   background-color:#fff;
 }
 
-.intro {
-  text-align:center;
-}
-.intro p {
+p.slogan {
     font-size: 1.75em;
     margin: 0;
     line-height: 1;
 }
-.intro ul {
+.intro {
+  text-align:center;
+  position:absolute;
+  min-height:100vh;
+  min-width:100%;
+  top:0;
+  left:0;
+  background-color:#08c8ff; /*Tabriz*/
+}
+.intro ul#paths {
   list-style-type: none;
   padding:0;
   margin:5em 12% 4.5em 12%;
 }
-.intro li {
+.intro ul#paths li {
   width:28%;
   margin: 0 6px;
   display:inline-block;
@@ -185,7 +194,7 @@ section.slide.nonintro {
 .button.alt:hover {
   border-color: #6c71e5;
 }
-.button.alt a, .button.alt a:visited, .button.alt a:hover {
+.button.alt a, .button.alt a:visited, .button.alt a:hover, .nav.alt ul li.button.alt a {
   color: #6c71e5;
 }
 .sign-up {
@@ -239,10 +248,11 @@ form > input {
 }
 
 .entry-form {
-  position: absolute;
+  /*position: absolute;
   top: 50%;
   left: 50%;
-  transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);*/
+  margin:120px auto;
   
   width: 500px;
   max-width: 100%;
@@ -257,6 +267,7 @@ form > input {
   padding: 50px 50px 20px 50px;
 }
 .entry-form .text-wrapper {
+  position:relative;
   padding-bottom:50px;
 }
 .entry-form .text-wrapper h2 {
@@ -264,10 +275,9 @@ form > input {
   margin: 0px 50px;
 }
 .entry-form h1 {
-  color:#1C1C1C;
   /*color:#08c8ff; /*Tabriz*/
   text-align:left;
-  margin-top:0;
+  margin: 0 0 1.5em 0;
 }
 .entry-form input {
   min-width:100%;
@@ -291,6 +301,7 @@ form > input {
 }
 .entry-form ul.errorlist {
   color: #DF4646; /* Vermillion */
+  font-size:.9em;
   text-align: left;
 }
 .entry-form p {
@@ -416,7 +427,7 @@ form > input {
   transform: translateY(-50%);
 }
 .intro .abs-center {
-  padding-top:3em;
+  margin-top:3em;
 }
 .feature-logo {
   display: block;

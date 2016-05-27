@@ -3,10 +3,10 @@
 <nav class="nav alt">
   <h1 class="hidden"><a href="{% url 'home' %}"><img src="{% static 'images/oneliner-mono-mark-white.svg' %}" alt="One Liner logo" width="50px"/></a></h1>
   <ul>
-    <li><a href="#how-it-works">How it works</a></li>
-    <li><a href="#faq">FAQ</a></li>
+    <li><a href="{% url 'home' %}#how-it-works">How it works</a></li>
+    <li><a href="{% url 'home' %}#faq">FAQ</a></li>
     {% if not user.is_authenticated %}
-    <li><a href="{% url 'register' %}">Get Started</a></li>
+    <li class="button alt"><a href="{% url 'register' %}">Get Started</a></li>
     <li><a href="{% url 'login' %}">Sign In</a></li>
     {% else %}
     <li><a href="{% url 'services' %}">All Services</a></li>
