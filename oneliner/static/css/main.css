@@ -193,6 +193,7 @@ p.slogan {
 }
 .button.alt:hover {
   border-color: #6c71e5;
+  background-color:#EDF1F4;
 }
 .button.alt a, .button.alt a:visited, .button.alt a:hover, .nav.alt ul li.button.alt a {
   color: #6c71e5;
@@ -247,6 +248,27 @@ form > input {
   margin-bottom: 1.5em;
 }
 
+input[type=text], input[type=password], input[type=url] {
+  background-color: rgba(0,0,0,.075);
+  /*color:#1C1C1C;*/
+  color:#777;
+  text-align:left;
+}
+input::-webkit-input-placeholder { /* Chrome */
+  color: #777;
+}
+input:-ms-input-placeholder { /* Chrome */
+  color: #777;
+}
+input::-moz-placeholder { /* Chrome */
+  color: #777;
+}
+ul.errorlist {
+  color: #DF4646; /* Vermillion */
+  font-size:.9em;
+  text-align: left;
+}
+
 .entry-form {
   /*position: absolute;
   top: 50%;
@@ -282,11 +304,7 @@ form > input {
 .entry-form input {
   min-width:100%;
 }
-.entry-form input[type=text], .entry-form input[type=password] {
-  background-color: rgba(0,0,0,.1);
-  color:#1C1C1C;
-  text-align:left;
-}
+
 .entry-form input::-webkit-input-placeholder { /* Chrome */
   color: transparent;
 }
@@ -298,11 +316,6 @@ form > input {
 }
 .entry-form > ul:not(.errorlist), form > input[type=text], form > input[type=password] {
   margin: .25em 0 .75em 0;
-}
-.entry-form ul.errorlist {
-  color: #DF4646; /* Vermillion */
-  font-size:.9em;
-  text-align: left;
 }
 .entry-form p {
   color: #fff;
@@ -477,349 +490,3 @@ form > input {
       width: 70%;
   }
 }
-
-// * {
-// 	box-sizing:border-box;
-// }
-
-// html, body {
-// 	margin:0;
-// 	padding:0;
-// 	color: white; /*Tabriz*/
-// 	font-family:"effra", Tahoma, helvetica, sans-serif; 
-//   background: #08c8ff;
-// }
-
-// h1, h2, h3, h4, h5, h6 {
-// 	font-family:"effra", Tahoma, helvetica, sans-serif;
-// }
-// h5 {
-// 	margin:0 0 .5em 0;
-// 	text-align:center;
-// 	text-transform: lowercase;
-//     font-family: 'Grand Hotel', sans-serif;
-//     font-size: 2.5em;
-//     font-weight: normal;
-//     letter-spacing: .02em;
-//     color:#08c8ff;
-// }
-// a, a:visited {
-// 	color:#5f65dc;
-// 	text-decoration:none;
-// }
-// a:hover {
-// 	color:#6c71e5;
-// 	text-decoration:underline;
-// }
-
-// /* Flashed messages at the top of the page */
-// ul.messages {
-//   float: left;
-//   width: 100%;
-//   padding: 0 2em;
-// }
-// ul.messages li {
-//   margin-left: 0;
-//   list-style-type: none;
-//   display: inline-block;
-//   padding: 0.5em;
-// }
-// ul.messages li.success {
-//   color: #3c763d;
-//   background-color: #dff0d8;
-//   border-color: #d6e9c6;
-// }
-
-// /* One Liner textarea */
-// textarea.one-liner {
-//   width: 100%;
-//   max-width: 500px;
-//   min-height: 200px;
-//   font-size: 16px;
-//   border: none;
-//   padding: 1em;
-// }
-
-// /* Errors, Success */
-// .errorlist {
-//   padding: 0;
-// }
-// .messages li.error,
-// .errorlist li {
-//   margin-left: 0;
-//   color: #a94442;
-//   background-color: #f2dede;
-//   border-color: #ebccd1;
-//   list-style-type: none;
-//   padding: 0.5em;
-//   display: inline-block;
-// }
-
-// /* Content area */
-// .content {
-//   padding: 20px;
-// }
-
-// /* Navigation */
-// .nav {
-//   width: 100%;
-//   float: left;
-//   padding: 0 2em;
-// }
-// .nav h1 {
-//   float: left;
-//   margin-right: 20px;
-// }
-
-// .nav ul {
-//   float: left
-// }
-
-// .nav ul li {
-//   list-style-type: none;
-//   float: left;
-//   margin-right: 20px;
-//   line-height: 50px;
-// }
-
-// /* Header */
-// .header {
-// 	position:fixed;
-// 	width:100%;
-// 	top:0;
-// 	z-index:9;
-// 	border-top:18px solid #08c8ff; /*Tabriz*/
-// }
-
-// .header .tab {
-//   max-width: 150px;
-// 	margin-left:18px;
-// 	margin-top: -18px;
-// 	background-color:#08c8ff; /*Tabriz*/
-// }
-
-// .header .tab:hover {
-// 	background-color:#5f65dc;
-// }
-
-// .tab img {
-// 	width:100%;
-// }
-
-// .button {
-// 	width:100%;
-// 	display:inline-block;
-// 	background-color:#5f65dc;
-// 	text-transform: uppercase;
-// 	font-weight: bold;
-//     letter-spacing: .05em;
-//     transition: all 0.23s ease-in-out 0s;
-// }
-// .button:hover {
-// 	background-color: #6c71e5;
-// 	cursor:pointer;
-// }
-// .button a, .button a:visited, .button a:hover {
-// 	color: #fff;
-//   padding: .75em;
-//   display: inline-block;
-//   min-width: 100%;
-//   text-decoration:none;
-// }
-
-// .sign-up {
-// 	margin-top:2em;
-// }
-// .sign-up p {
-// 	text-transform: lowercase;
-//   font-size: 1.5em;
-//   font-family:"effra", Tahoma, helvetica, sans-serif;
-//   letter-spacing: .02em;
-//   font-weight: normal;
-//   margin: 0;
-// }
-// label {
-//   display: block;
-// }
-// input {
-//   font-size: 1em;
-//   padding: .25em;
-//   margin: .5em 0;
-//   max-width: 100%;
-//   min-width: 250px;
-//   border: none;
-//   outline-color: #5f65dc;
-//   color:#8f9698;
-//   font-family:"effra", Tahoma, helvetica, sans-serif;
-// }
-// input[type="submit"] {
-//   color: white;
-//   border: 1px solid #999;
-//   min-width: auto;
-// }
-// form ul {
-//   margin: 0;
-//   padding: 0
-// }
-// form ul li {
-//   list-style-type: none;
-// }
-// form ul li input {
-//   margin-right: 0.5em;
-// }
-// form ul li label:hover,
-// form ul li input:hover {
-//   cursor: pointer;
-// }
-// form > ul:not(.errorlist),
-// form > input {
-//   margin-bottom: 1.5em;
-// }
-
-// .hidden {
-// 	display:none!important;
-// }
-// #mc_embed_signup_scroll .indicates-required {
-// 	display: none;
-// }
-// #mc_embed_signup_scroll h3 {
-// 	display: none;
-// }
-// #mc_embed_signup {
-// 	background:transparent;
-// }
-// #mc_embed_signup form {
-// 	text-align: center;
-// }
-// #mc_embed_signup .mc-field-group {
-// 	width:32%;
-// 	clear:none;
-//     display:inline-block;
-//     padding:0 2px;
-// }
-// #mc_embed_signup input{
-// 	border:none;
-// 	border-radius:0;
-// 	margin: 0;
-// }
-// #mc_embed_signup .button {
-//     background-color:#5f65dc;;
-//     border-radius: 0;
-//     font-weight: bold;
-//     font-size: 1em;
-//     margin: 0 1px 0 10px;
-//     padding: .75em;
-//     letter-spacing: .05em;
-//     letter-spacing: .05em;
-//     line-height: 1.35;
-//     height: auto;
-// }
-// #mc_embed_signup .button:hover {
-// 	background-color: #6c71e5;
-// }
-// #mc_embed_signup .mc-field-group.input-group{
-// 	display:none;
-// }
-// #mc_embed_signup #mc-embedded-subscribe-form div.mce_inline_error {
-// 	margin-top:8px;
-// 	border-radius:0;
-// 	position: absolute;
-//     white-space: nowrap;
-//     left: 4px;
-//     color: white;
-//     padding: 0 4px;
-//     background-color: transparent;
-// }
-// #mc_embed_signup #mc-embedded-subscribe-form input.mce_inline_error {
-// 	border:none;
-// 	border-left: 4px solid #DF4646;/*vermillion*/
-// }
-// #mc_embed_signup #mc-embedded-subscribe-form input.mce_inline_error:focus {
-// 	border-left:none;
-// }
-// #mc_embed_signup #mce-error-response, #mc_embed_signup #mce-success-response {
-//     min-width: 100%;
-//     text-align: center;
-//     margin:0;
-//     color:#fff;
-//     font-weight: normal;
-// }
-// #mc_embed_signup input:focus {
-// 	outline-color: #5f65dc;
-// }
-// .inner {
-// 	margin:0 auto;
-// 	max-width:900px;
-// 	min-height:100vh;
-// 	position:relative;
-// 	color:#fff;
-// 	padding-top:1px;
-// }
-
-// .content {
-// 	margin: 0 auto;
-//   padding: 2em;
-//   line-height:1.5;
-// }
-// .abs-center {
-// 	position:absolute;
-// 	left:0;
-// 	right:0;
-// 	top:50%;
-// 	transform: translateY(-50%);
-// }
-// .intro .abs-center {
-// 	padding-top:3em;
-// }
-// .feature-logo {
-//   display:block;
-//   margin-top:2em auto .75em auto;
-//   max-width:100%;
-//   width:100%;
-// }
-// .learn-logo {
-// 	display:inline-block;
-// 	margin:0 auto;
-// 	width:300px;
-// }
-// .divider-mark {
-// 	display:block;
-// 	margin:0 auto;
-// }
-// .fixed {
-// 	position:fixed;
-// }
-
-// @media screen and (max-width: 768px) {
-// 	.intro .abs-center {
-// 		padding:8%;
-// 	}
-// 	.intro h2 {
-// 		margin-top:.75em;
-// 	}
-// 	.intro ul {
-// 		margin-left:0;
-// 		margin-right:0;
-// 	}
-//     .intro li {
-//     	width:100%;
-//     	max-width: 220px;
-//     	margin-bottom:.5em;
-//     }
-//     #mc_embed_signup .mc-field-group {
-// 	    width: 50%;
-// 	}
-// }
-
-// @media screen and (max-width: 480px) {
-// 	.intro h2 {
-// 		margin-top:0;
-// 	}
-//     #mc_embed_signup .mc-field-group {
-// 	    width: 70%;
-// 	}
-// }
-
-
-
-
