@@ -26,7 +26,9 @@ SECRET_KEY = '%h@-bh41#b9l)*h3#4+&nmn#%n3o8am1q8n)!f48_7^u#bs25k'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'oneliner.inn.org'
+]
 
 
 # Application definition
