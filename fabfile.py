@@ -48,7 +48,7 @@ def production():
     env.db_host = 'localhost'
     env.database_password = os.environ['ONELINER_PROD_DB_PASSWORD']
 
-    env.django_settings_module = '%(project_name)s.settings' % env
+    env.django_settings_module = '%(project_name)s.production_settings' % env
 
 
 def staging():
