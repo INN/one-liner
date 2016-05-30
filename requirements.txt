@@ -1,2 +1,5 @@
+Fabric
+gunicorn
+gevent
 Django==1.9.6
 wsgiref==0.1.2
