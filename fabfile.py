@@ -11,7 +11,7 @@ env.site_media_prefix = "static"
 env.path = '/home/newsapps/sites/%(project_name)s' % env
 env.env_path = '/home/newsapps/.virtualenvs/%(project_name)s' % env
 env.repo_path = '%(path)s' % env
-env.repository_url = ""
+env.repository_url = "git@github.com:INN/one-liner.git"
 
 # Varnish cache servers to purge
 env.cache_servers = []
