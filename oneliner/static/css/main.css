@@ -182,7 +182,7 @@ li.service {
     padding: 0 3em 0 0;
     
 }
-.service h3 {
+.inner-alt .service h3 {
     margin-top: 0;
     font-size: 1.5em;
 }
