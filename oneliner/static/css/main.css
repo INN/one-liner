@@ -155,7 +155,6 @@ nav ul li.button.alt {
     list-style-type: none;
     margin: 0 0 1.75em 0;
     padding: 0;
-    text-align: right;
 }
 .content.app .actions li {
     display: inline-block;
@@ -191,6 +190,7 @@ li.service {
   margin-bottom:0;
   border-top: 1px solid #ccc;
   padding-top: .5em;
+  text-align: right;
 }
 .actions ul a, 
 .actions ul a:visited {
