@@ -146,6 +146,11 @@ nav ul li.button.alt {
   margin-top:1em;
 }
 
+.content.app h2.cute {
+    margin-top: 3.5em;
+    width: 350px;
+}
+
 #intro-spacer {
     min-height: 100vh;
 }
@@ -245,7 +250,7 @@ input {
 
 input[type="submit"] {
   color: white;
-  margin:0;
+  margin:0!important;
 }
 form ul {
   margin: 0;

@@ -1,9 +1,9 @@
 {% extends '_base.html' %}
 
 {% block content %}
-<h2>Welcome, {% if user.first_name %}{{ user.first_name }}{% else %}{{ user.username }}{% endif %}</h2>
+<h2 class="cute">Welcome, {% if user.first_name %}{{ user.first_name }}{% else %}{{ user.username }}{% endif %}</h2>
 
-<h3>Your One Liner:</h3>
+<h1>Your One Liner:</h1>
 <textarea class="one-liner">&lt;script&gt;(function(){var s,f;s=document.createElement('script');s.src='{{ one_liner_src }}';f=document.getElementsByTagName('script')[0];f.parentNode.insertBefore(s,f);})();&lt;/script&gt;</textarea>
 <p><a href="{% url 'instructions' %}">Read the instructions for installing One Liner on your site</a></p>
 
