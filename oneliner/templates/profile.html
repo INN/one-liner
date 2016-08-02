@@ -15,10 +15,11 @@
       <div class="actions">
         <ul>
           <li><a href="{% url 'service_edit' config.service.name %}">Edit settings</a></li>
-          <li><a href="{% url 'service_remove' config.service.name %}">Remove from my config</a></li>
+          <li><a href="{% url 'service_remove' config.service.name %}">Remove</a></li>
         </ul>
+      </div>
     </li>
   {% endfor %}
 </ul>
-<button class="button"><a href="{% url 'services' %}">Add another service</a></button>
+<button class="button"><a href="{% url 'services' %}">Add a service</a></button>
 {% endblock %}

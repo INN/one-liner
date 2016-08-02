@@ -4,7 +4,7 @@
 <h1>Available services</h1>
 <ul>
   {% for service in services %}
-  <li>
+  <li class="service">
     <h3><a href="{% url 'service' service.name %}">{{ service.name }}</a></h3>
     <table>
       <th>Price</th>
@@ -18,12 +18,12 @@
     </table>
     {% if service.id in existing_configs %}
       <p>You already have this service added to your configuration.</p>
-      <p>
+      <div class="actions">
         <ul>
           <li><a href="{% url 'service_edit' service.name %}">Edit settings</a></li>
           <li><a href="{% url 'service_remove' service.name %}">Remove service</a></li>
         </ul>
-      </p>
+      </div>
     {% elif not user.userprofile.organization %}
       <p><a href="{% url 'survey' %}">Tell us about your company before adding services</a></p>
     {% else %}
