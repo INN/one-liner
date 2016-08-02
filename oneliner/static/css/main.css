@@ -60,6 +60,7 @@ a:hover {
   padding: 0 2em;
   position: absolute;
   z-index: 99;
+  border-top:4px solid #08c8ff;
 }
 .nav h1 {
   float: left;
@@ -140,6 +141,11 @@ nav ul li.button.alt {
   line-height:1.5;
 }
 
+.content.app h2{
+  text-align: left;
+  margin-top:1em;
+}
+
 #intro-spacer {
     min-height: 100vh;
 }
@@ -201,7 +207,7 @@ p.slogan {
 }
 .button.alt:hover {
   border-color: #6c71e5;
-  background-color:#EDF1F4;
+  background-color:#dedffa;
 }
 .button.alt a, .button.alt a:visited, .button.alt a:hover, .nav.alt ul li.button.alt a {
   color: #6c71e5;
@@ -223,6 +229,9 @@ label {
   text-align: left;
   text-transform: lowercase;
 }
+.content.app label {
+  text-transform: none;
+}
 input {
   font-size: 1.5em;
   padding: .25em;
@@ -236,6 +245,7 @@ input {
 
 input[type="submit"] {
   color: white;
+  margin:0;
 }
 form ul {
   margin: 0;
@@ -374,7 +384,7 @@ ul.errorlist {
   border-radius:0;
   margin: 0;
 }
-#mc_embed_signup .button {
+#mc_embed_signup .button, input[type="submit"] {
     background-color:#5f65dc;;
     border-radius: 0;
     font-weight: bold;
@@ -385,8 +395,9 @@ ul.errorlist {
     letter-spacing: .05em;
     line-height: 1.35;
     height: auto;
+    text-transform: uppercase;
 }
-#mc_embed_signup .button:hover {
+#mc_embed_signup .button:hover, input[type="submit"]:hover {
   background-color: #6c71e5;
 }
 #mc_embed_signup .mc-field-group.input-group{
