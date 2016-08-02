@@ -62,7 +62,7 @@ def profile(request):
         return render(request, 'profile.html', {
             'configured_services': configured_services,
             # TODO: the domain in this url should be dynamic
-            'one_liner_src': 'http://localhost:8000/js/%s/app.js' % org.id
+            'one_liner_src': 'http://oneliner.inn.org/js/%s/app.js' % org.id
         })
 
 
