@@ -13,7 +13,7 @@ h1, h2, h3, h4, h5, h6 {
   font-family:"effra", Tahoma, helvetica, sans-serif; 
 }
 h2 {
-  margin:0 0 .5em 0;
+  margin:0 0 1em 0;
   text-align:center;
   text-transform: lowercase;
   font-family: 'Grand Hotel', sans-serif;
@@ -52,6 +52,12 @@ a, a:visited {
 a:hover {
   color:#09C9FF;
   text-decoration:underline;
+}
+
+p, li {
+
+  font-size: 1.2em;
+    line-height: 1.5;
 }
 
 /* Navigation */
@@ -191,7 +197,7 @@ li.service {
 }
 .inner-alt .service h3 {
     margin-top: 0;
-    font-size: 1.5em;
+    font-size: 1.75em;
     border-bottom: 2px solid #08c8ff;
     padding-bottom: .25em;
 }
@@ -509,6 +515,18 @@ ul.errorlist {
   padding-top:1px;
   padding-bottom:3em;
 }
+#learn-more .inner-alt,
+#how-it-works .inner-alt {
+  border-bottom:4px solid #08c8ff;
+  margin-bottom:3em;
+}
+#learn-more .inner-alt li,
+#how-it-works .inner-alt li,
+#faq .inner-alt li
+ {
+    margin-bottom:.5em;
+}
+
 .inner-alt h3 {
   margin-top:1.5em;
 }
