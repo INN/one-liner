@@ -5,13 +5,13 @@
 
 <h1>Your One Liner:</h1>
 <textarea class="one-liner">&lt;script&gt;(function(){var s,f;s=document.createElement('script');s.src='{{ one_liner_src }}';f=document.getElementsByTagName('script')[0];f.parentNode.insertBefore(s,f);})();&lt;/script&gt;</textarea>
-<p><a href="{% url 'instructions' %}">Read the instructions for installing One Liner on your site</a></p>
+<p><a href="{% url 'instructions' %}">Instructions to install One Liner on your site</a></p>
 
 <h3>Configured services</h3>
 <ul>
   {% for config in configured_services %}
     <li>
-      {{ config.service.name }} ({{ config.service.account_id_label }}: {{ config.account_id }})
+      <span class="service-name">{{ config.service.name }}</span> <span class="service-label">({{ config.service.account_id_label }}: {{ config.account_id }})</span>
       <div class="actions">
         <ul>
           <li><a href="{% url 'service_edit' config.service.name %}">Edit settings</a></li>
@@ -20,5 +20,5 @@
     </li>
   {% endfor %}
 </ul>
-<p><a href="{% url 'services' %}">Add another service</a></p>
+<button class="button"><a href="{% url 'services' %}">Add another service</a></button>
 {% endblock %}

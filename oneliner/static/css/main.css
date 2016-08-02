@@ -151,6 +151,21 @@ nav ul li.button.alt {
     width: 350px;
 }
 
+.content.app ul {
+    list-style-type: none;
+    margin: 0 0 1.75em 0;
+    padding: 0;
+}
+.content.app .actions li {
+    display: inline-block;
+    margin-right: 1em;
+    font-size: .9em;
+}
+.content.app button.button {
+  max-width:300px;
+  font-size:1em;
+}
+
 #intro-spacer {
     min-height: 100vh;
 }
