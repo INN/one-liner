@@ -1,7 +1,7 @@
 {% extends '_base.html' %}
 
 {% block content %}
-<h2>Update {{ service.name }}</h2>
+<h1>Update {{ service.name }}</h1>
 <p>To update {{ service.name }} to your One Liner configuration, we'll need to know your {{ service.account_id_label }}.</p>
 <form action="{% url 'service_edit' service.name %}" method="post">
     {% csrf_token %}
