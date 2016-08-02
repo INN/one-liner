@@ -26,5 +26,29 @@
     <div class="content">
     {% block content %}{% endblock %}
     </div>
+
+    <footer>
+      <div class="inner">
+        Brought to you by the Institute for Nonprofit News and the Knight Prototype Fund.
+      </div>
+    </footer>
+
+    <script src="//code.jquery.com/jquery-3.1.0.min.js"></script>
+    <script>
+      $(function() {
+        $('a[href*="#"]:not([href="#"])').click(function() {
+          if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+            var target = $(this.hash);
+            target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+            if (target.length) {
+              $('html, body').animate({
+                scrollTop: target.offset().top
+              }, 1000);
+              return false;
+            }
+          }
+        });
+      });
+    </script>
   </body>
 </html>

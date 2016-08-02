@@ -6,11 +6,11 @@
 <section class="slide intro">
     <div class="inner">
       <div class="abs-center">
-        <h2>Coming soon!</h2>
+        <h2 class="cute">Coming soon!</h2>
         <img src="{% static 'images/oneliner-mono-logo-white.svg' %}" alt="One Liner logo" width="100%" class="feature-logo mono"/>
         <p class="slogan">the ultimate line of code</p>
         <ul id="paths">
-          <li><span class="button"><a href="//nerds.inn.org/2016/02/22/inn-receives-knight-prototype-grant/" target="_blank">Learn more</a></span></li>
+          <li><span class="button"><a href="#learn-more">Learn more</a></span></li>
           <li><span class="button alt"><a href="{% url 'register' %}">Get started</a></span></li>
         </ul>
         <div class="sign-up" style="display:none;">
@@ -60,5 +60,37 @@
         </div>
       </div>
     </div>
-</section> 
+</section>
+<section class="slide" id="intro-spacer">
+  
+</section>
+<section id="learn-more">
+  <div class="inner-alt"> 
+    <h2>About One Liner</h2>
+    <h3>The ultimate line of code</h3>
+    <p>One Liner helps organizations make better choices about their third-party services. It is the single-line-of-code service to end (remedy) all single-line-of-code services.</p>
+    <h3>Code for the rest of us</h3>
+    <p>This is for the editor, reporter (or other web writer) who doesn’t have a lot of experience with web development, cringes at the sight of javascript and generally does not want to be responsible for the addition of these types of features and services but often finds the responsibility falls to them. These folks might also be their organization’s technologist by default or be serving several roles for the company as in the case of very small INN members (think: when you have one or two people of staff, you have to do a little bit of everything).</p>
+  </div>
+</section>
+<section id="how-it-works">
+  <div class="inner-alt"> 
+    <h2>How it works</h2>
+    <h3>One Liner has a few components:</h3>
+    <ul>
+    <li style="font-weight: 400;">A <b>research tool</b> listing some of the most common third-party services one might add to their site along with some simple information about each, including possible performance and privacy implications. The tool will also help organizations make informed decisions and select tools that are best suited for the size of their organization and the problems they are trying to solve.</li>
+    <li style="font-weight: 400;">A <b>configuration dashboard</b> where users can select from the list of supported services and walk through the setup process without leaving the dashboard. No searching for documents. No struggling to understand. Let One Liner guide the way.</li>
+    <li style="font-weight: 400;">A <b>web service</b> not unlike the services we’re looking to remedy. Once the user has selected and configured the third-party services they would like to use, we’ll deliver a single line of code they can add to their site. This single line of code will be responsible for loading the specified services and their configurations from the One Liner application.</li>
+    </ul>
+  </div>
+</section>
+<section id="faq">
+  <div class="inner-alt"> 
+    <h2>Frequently Asked Questions</h2>
+    <h3>Where did the name "One Liner" come from?</h3>
+    <p>One Liner is named after the “just one line of code” selling point often cited by many third-party services.</p>
+    <h3>How did it come to be?</h3>
+    <p>The Institute for Nonprofit News received a Knight Prototype Fund grant to build One Liner. (<a href="//nerds.inn.org/2016/02/22/inn-receives-knight-prototype-grant/" target="_blank">Read the announcement!</a>) The Knight Prototype Fund is a grant program helping media organizations, technologists and newcomers or hobbyists develop new ideas from concept phase to, hopefully, a live demonstration.</p>
+  </div>
+</section>
 {% endblock %}

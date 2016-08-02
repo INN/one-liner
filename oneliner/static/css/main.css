@@ -13,6 +13,16 @@ h1, h2, h3, h4, h5, h6 {
   font-family:"effra", Tahoma, helvetica, sans-serif; 
 }
 h2 {
+  margin:0 0 .5em 0;
+  text-align:center;
+  text-transform: lowercase;
+  font-family: 'Grand Hotel', sans-serif;
+  font-size: 2.5em;
+  font-weight: normal;
+  letter-spacing: .02em;
+  color:#08c8ff;
+}
+h2.cute {
   text-transform: lowercase;
   font-family: 'Grand Hotel', sans-serif;
   font-size: 2.5em;
@@ -130,10 +140,8 @@ nav ul li.button.alt {
   line-height:1.5;
 }
 
-s
-section.intro-spacer {
-  margin-top:100vh;
-  background-color:#fff;
+#intro-spacer {
+    min-height: 100vh;
 }
 section.nonintro {
   background-color:#fff;
@@ -423,6 +431,16 @@ ul.errorlist {
   color:#fff;
   padding-top:1px;
 }
+.inner-alt {
+  margin:0 auto;
+  max-width:900px;
+  position:relative;
+  padding-top:1px;
+  padding-bottom:3em;
+}
+.inner-alt h3 {
+  margin-top:1.5em;
+}
 
 .text {
   margin: 0 auto;
@@ -469,6 +487,15 @@ textarea.one-liner {
   min-width: 50%;
   padding: 5px 10px;
   min-height: 55px;
+}
+
+footer {
+  background-color:#08c8ff;
+  padding:2em;
+}
+footer .inner {
+  min-height:auto;
+  text-align:center;
 }
 
 @media screen and (max-width: 768px) {
