@@ -96,8 +96,10 @@ p, .service-name, .service-label {
   letter-spacing: .02em;
 }
 nav img {
-  padding: 1em 0;
+  padding: 1em 1.5em;
+  margin-top: -1px;
   float: left;
+  background-color: #08c8ff;
 }
 nav ul li.button.alt {
   width: auto;
@@ -142,7 +144,7 @@ nav ul li.button.alt {
 .content {
   position:relative;
   min-height:100vh;
-  padding:80px 20px 20px 20px;
+  padding:120px 20px 20px 20px;
   margin:0 auto;
   line-height:1.5;
 }
@@ -371,7 +373,7 @@ ul.errorlist {
 }
 .entry-form form, .entry-form .text-wrapper {
   background-color: rgba(255,255,255,1);
-  padding: 50px 50px 20px 50px;
+  padding: 50px;
 }
 .entry-form .text-wrapper {
   position:relative;
@@ -384,10 +386,13 @@ ul.errorlist {
 .entry-form h1 {
   /*color:#08c8ff; /*Tabriz*/
   text-align:left;
-  margin: 0 0 1.5em 0;
+  margin: 0 0 1em 0;
 }
 .entry-form input {
   min-width:100%;
+}
+.entry-form input[type="submit"] {
+  margin-top:1.5em!important;
 }
 
 .entry-form input::-webkit-input-placeholder { /* Chrome */
