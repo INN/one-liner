@@ -465,6 +465,11 @@ img.screenshot {
   padding: 20px;
   background-color: #ccc;
 }
+textarea.one-liner {
+  min-width: 50%;
+  padding: 5px 10px;
+  min-height: 55px;
+}
 
 @media screen and (max-width: 768px) {
   .intro .abs-center {
