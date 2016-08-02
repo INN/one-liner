@@ -168,11 +168,30 @@ nav ul li.button.alt {
 }
 
 li.service {
-    border: 4px solid #08c8ff;
-    padding: 0 1em 1em 1em;
+    border: 4px solid #909799;
+    padding: 1em;
+    margin-bottom: 2em;
+    width: 100%;
+    max-width: 600px;
 }
-.service th, .service td {
+.service th {
     padding: 0 3em 0 0;
+    text-transform: uppercase;
+}
+.service td {
+    padding: 0 3em 0 0;
+    
+}
+.service h3 {
+    margin-top: 0;
+    font-size: 1.5em;
+}
+.service .actions ul {
+  margin-bottom:0;
+}
+.service .actions ul a, 
+.service .actions ul a:visited {
+  color:#5f65dc;
 }
 
 #intro-spacer {
