@@ -20,7 +20,7 @@ h2 {
   font-size: 2.5em;
   font-weight: normal;
   letter-spacing: .02em;
-  color:#08c8ff;
+  color:#5f65dc;
 }
 h2.cute {
   text-transform: lowercase;
@@ -54,10 +54,10 @@ a:hover {
   text-decoration:underline;
 }
 
-p, li {
+p {
 
   font-size: 1.2em;
-    line-height: 1.5;
+  line-height: 1.5;
 }
 
 /* Navigation */
@@ -524,6 +524,8 @@ ul.errorlist {
 #how-it-works .inner-alt li,
 #faq .inner-alt li
  {
+  font-size: 1.2em;
+  line-height: 1.5;
     margin-bottom:.5em;
 }
 
