@@ -27,7 +27,7 @@
     {% elif not user.userprofile.organization %}
       <p><a href="{% url 'survey' %}">Tell us about your company before adding services</a></p>
     {% else %}
-      <p><a href="{% url 'service_add' service.name %}">Add this service</a></p>
+      <button class="button"><a href="{% url 'service_add' service.name %}">Add this service</a></button>
     {% endif %}
   </li>
   {% endfor %}
