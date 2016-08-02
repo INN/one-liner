@@ -1,5 +1,15 @@
 {% extends '_base.html' %}
+{% load staticfiles %}
 
 {% block content %}
-<p>TODO: instructions for installing One Liner on your site</p>
+<h1>How To Setup One Liner</h1>
+<p><strong>Step one:</strong> Login or register</p>
+<img src="{% static 'images/oneliner-register.png' %}" alt="One Liner registration page" class="screenshot" />
+<p><strong>Step two:</strong> If registering for the first time, fill out a basic survey. We'll use this to help recommend services that are best suited to your needs and your budget.</p>
+<img src="{% static 'images/oneliner-survey.png' %}" alt="One Liner initial survey" class="screenshot" />
+<p><strong>Step three:</strong> Add and configure services that you want to use on your site.</p>
+<img src="{% static 'images/oneliner-manage.png' %}" alt="One Liner management screen" class="screenshot" />
+<p><strong>Step four:</strong> Go to your home page in the One Liner app and copy the script from the “Your One Liner” box. Add this code to your website on every page you wanted to be tracked by the services you have selected. The One Liner code should typically added just before the closing </head> tag in the header section of your html page.</p>
+<img src="{% static 'images/oneliner-one-line.png' %}" alt="One Liner code snippet" class="screenshot" />
+<p><strong>All done!</strong> One Liner is now set up to manage all of the services you've selected.</p>
 {% endblock %}

@@ -460,6 +460,11 @@ ul.errorlist {
 .fixed {
   position:fixed;
 }
+img.screenshot {
+  max-width: 50%;
+  padding: 20px;
+  background-color: #ccc;
+}
 
 @media screen and (max-width: 768px) {
   .intro .abs-center {
