@@ -175,7 +175,7 @@ li.service {
     max-width: 600px;
 }
 .service th {
-    padding: 0 3em 0 0;
+    padding: 0 4em 0 0;
     text-transform: uppercase;
 }
 .service td {
@@ -185,9 +185,13 @@ li.service {
 .inner-alt .service h3 {
     margin-top: 0;
     font-size: 1.5em;
+    border-bottom: 2px solid #08c8ff;
+    padding-bottom: .5em;
 }
 .service .actions ul {
   margin-bottom:0;
+  border-top: 1px solid #ccc;
+  padding-top: .5em;
 }
 .service .actions ul a, 
 .service .actions ul a:visited {
