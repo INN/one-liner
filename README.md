@@ -1,4 +1,10 @@
-#Quickstart
+# One Liner
+
+For more about what this repository was, see https://labs.inn.org/2016/02/22/inn-receives-knight-prototype-grant/
+
+We archived it in March 2020.
+
+# Quickstart
 
 	$ mkvirtualenv one-liner
 	$ pip install -r requirements.txt
