@@ -1,7 +1,7 @@
 Fabric
 gunicorn
 gevent
-Django==1.9.6
+Django==1.11.28
 django-extensions
 MySQL-python
 wsgiref==0.1.2
